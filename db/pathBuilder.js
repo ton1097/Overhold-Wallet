@@ -17,7 +17,7 @@ function getPath() {
             break;
 
         case 'win32':
-            newPath = path.join(`${winDirectory}`, 'AppData');
+            newPath = path.join(`${winDirectory}`);
             break;
 
         default:

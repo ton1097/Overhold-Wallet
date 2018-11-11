@@ -8,20 +8,20 @@ function getPath() {
 	let newPath = '';
 
 	switch (process.platform) {
-	case 'darwin':
-		newPath = path.join(`${homeDirectory}`, 'Library', 'Application Support');
-		break;
+		case 'darwin':
+			newPath = path.join(`${homeDirectory}`, 'Library', 'Application Support');
+			break;
 
-	case 'linux':
-		newPath = path.join(`${homeDirectory}`, '.config');
-		break;
+		case 'linux':
+			newPath = path.join(`${homeDirectory}`, '.config');
+			break;
 
-	case 'win32':
-		newPath = path.join(`${winDirectory}`, 'AppData');
-		break;
+		case 'win32':
+			newPath = path.join(`${winDirectory}`);
+			break;
 
-	default:
-		throw new Error('Unknown platform', process.platform);
+		default:
+			throw new Error('Unknown platform', process.platform);
 	}
 
 	return newPath;
