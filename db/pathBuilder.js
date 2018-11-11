@@ -1,5 +1,7 @@
 // We use custom path builder because we cannot use electron-api this.
 let homeDirectory = process.env.HOME;
+let winDirectory = process.env.APPDATA;
+
 const path = require('path');
 // Probably we should move it to utils directory.
 function getPath() {
@@ -15,7 +17,7 @@ function getPath() {
             break;
 
         case 'win32':
-            newPath = path.join(`${homeDirectory}`, 'AppData');
+            newPath = path.join(`${winDirectory}`, 'AppData');
             break;
 
         default:
